@@ -17,7 +17,7 @@
 
 php artisan serve
 php artisan config:cache
-
+php artisan migrate:refresh
 достать коллекцию postman из папки docs
 импортировать в postman
 выполнить http://localhost:8000/api/registration
