@@ -8,6 +8,16 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * App\Models\User - класс-модель Пользователь
+ *
+ * @property int $id    - идентификатор
+ * @property string $email  - емейл
+ * @property string $password   - пароль
+ * @property string|null $gender - пол
+ * @property \Illuminate\Support\Carbon|null $created_at    - время создания
+ * @property \Illuminate\Support\Carbon|null $updated_at    - дата создания
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -18,8 +28,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
+        'gender',
         'password',
     ];
 
