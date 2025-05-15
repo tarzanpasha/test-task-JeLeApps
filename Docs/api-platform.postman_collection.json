@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "4d4015c1-245a-4d3e-9444-31578f15857d",
+		"name": "api-platform",
+		"description": "```\n1. Развернуть ларавел проект , либо использовать свой проект2. Написать в ТГ https://t.me/... о начале выполнения тестового задания. Текст: «{фио}, ,бекенд, начал выполнять»3. Разработать метод апи «Регистрация нового юзера» api/registration с параметрами email, password, gender4. Разработать апи метод api/profile для выдачи данных Пользователя5. Предоставить документацию в виде Postman проекта6. Представить скриншоты запросов из Postman7. Отправить в телеграмм https://t.me/.... демонстрации работы тестового задания   Время выполнения- не более 3 часов\n\n ```",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6004376",
+		"_collection_link": "https://restless-meteor-254781.postman.co/workspace/4bd1764a-1c21-450c-ad7b-02871ae9740a/collection/6004376-4d4015c1-245a-4d3e-9444-31578f15857d?action=share&source=collection_link&creator=6004376"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "test3@test.ru",
+							"description": "Емайл",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "111111",
+							"description": "от 6 символов",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "male",
+							"description": "male, female, other",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"registration"
+					]
+				},
+				"description": "### Регистрация пользователя\n\nЭтот api регистрирует нового пользователя.\n\n#### Передаваемые поля\n\n- `email` (text): емейл адрес\n    \n- `password` (text): пароль\n    \n- `gender` (text): пол - допускаются только след. значения: \"male\", \"other\" или \"female\".\n    \n\n#### Response\n\nВозращается токен доступа, сообщение об успешном завершении и поле suscess"
+			},
+			"response": [
+				{
+					"name": "registration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@test.ru",
+									"description": "Емайл",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "111111",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"description": "male, female",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registration"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 May 2025 04:40:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"The email has already been taken.\",\n    \"token\": \"\"\n}"
+				},
+				{
+					"name": "registration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@test.ru",
+									"description": "Емайл",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "111111",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"description": "male, female",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registration"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 May 2025 04:41:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"User register successfully\",\n    \"token\": \"2|57q28fEgqNp6tgXnWdUZpZ9GlwVIZkntXQkyfzM1d306218b\"\n}"
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|Ooorl7hQ6twySbqp8oxjiWuIdq1d569Z8uYscKtLa94f875c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile"
+					]
+				},
+				"description": "### Получение профиля\n\nВ результате выполнения получаем следующий ответ:\n\n#### Ответ\n\nОтвет имеет json следующего формата\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"data\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"id\": {\n          \"type\": \"integer\"\n        },\n        \"email\": {\n          \"type\": \"string\"\n        },\n        \"gender\": {\n          \"type\": \"string\"\n        },\n        \"created_at\": {\n          \"type\": \"string\",\n          \"format\": \"date-time\"\n        },\n        \"updated_at\": {\n          \"type\": \"string\",\n          \"format\": \"date-time\"\n        }\n      }\n    }\n  }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "profile-success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 May 2025 05:51:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"email\": \"test3@test.ru\",\n        \"gender\": \"male\",\n        \"created_at\": \"2025-05-15T05:50:57.000000Z\",\n        \"updated_at\": \"2025-05-15T05:50:57.000000Z\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
